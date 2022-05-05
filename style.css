@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body ,html{
+    font-size: 16px;
+    color: rgba(0 , 0 , 0 , .87);
+    font-family: "Monserrat" ,sans-serif;
+    line-height: 1.6;
+    /* eliminer tous les margins
+    (eviter les espaces blanc autours de notre site ) */
+    margin: 0;
+}
+
+.topbar {
+    /* pour eviter qd on met nav en float left,
+    celui la ne rend pas en compte que nav est exite 
+    , du coup => topbar va avoir un hauteur de 0px */
+    /* solution => formatage du contexte soit par
+     overflow: hidden , ou( vous pouvez voir la partie f.contexte ds la documentation mdn ... */
+    position: fixed;
+    /* forcer l'entete pr prendre totalite de la largueur du navigateur */
+    top: 0;
+    left: 0;
+    right: 0;
+    /* pour etre sur */
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+}
+
+.topbar nav {
+    float: left;
+}
+
+/* dans l'etat inactive pr les liens */
+.topbar nav a{
+    color: #9F9F9F;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0 53px; 
+}
+/* lorsque on survole un lien ou lorsqu'un lien contient la classe active*/
+.topbar nav a:hover , .topbar a.active{
+    color: #000000;
+}
+.social {
+    float: right;
+}
+
+/* pour avoir memes espaces entre les 2 icons de social */
+.social a {
+    padding: 0 12px;
+    opacity: 0.5;
+}
+
+.social a:hover {
+    opacity: 1; 
+}
+
+
+/* mettons l'image ds div */
+.banniere {
+    height: 427px;
+    background: no-repeat center center / cover url("/ressources/images/header.jpg");
+}
+
+/* ----------------------------------------------------------------------*/
+/* 2eme partie */
+/* on va avoir 2 colonne ==> 1er : 1543px et 2eme: 378px */
+
+
+.main {
+    float: left;
+    background: #fff;
+    width: 80%;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, .05);
+    position: relative;
+    z-index: 2;
+} 
+
+.sidebar {
+    float: right;
+    background: #fbfbfb;
+    width: 20%;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar-title {
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 15px 0px;
+}
+.sidebar-title:first-child {
+    margin-top: 0;
+}
+
+.sidebar  a {
+    color: #9F9F9F;
+    text-decoration: none;
+}
+.sidebar a:hover{
+    text-decoration-line: underline;
+}
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 6.5px 0;
+}
+
+.sidebar li:first-child {
+    padding-top: 0;
+}
+.sidebar li:last-child {
+    padding-bottom: 0;
+}
+
+/* attaquons hr */
+.sidebar hr {
+    border: none;
+    background: #C4C4C4;
+    height: 1px;
+    margin: 50px 0;
+}
+/* regler la partie article de notre page */
+.article-img {
+    float: left;
+    width: 308px;
+    margin-right: 25px;
+}
+
+.article-img img {
+    width: 100%;
+    height: auto;
+}
+/* il faudrait que l'article nettoie les flottes a la fin 
+pour eviter qu'on ait ce decalage */
+.article {
+    overflow: hidden;
+}
+
+/* typographie de la date */
+
+.article-date {
+    font-weight: 300;
+    color: #000;
+    opacity: .6;
+    margin-bottom: 5px;
+}
+
+.article-titre {
+    font-size: 2.25rem;
+    line-height: 1.1;
+}
+
+/* je veux que tous les liens d'article herite la coleur */
+.article a {
+    color: inherit;
+    text-decoration: none;
+}
+.article a:hover {
+    text-decoration: underline;
+}
+/* vu que les 2 elements precedents sont pas dans un element qui va 
+faire le formattage du contexte => alors c'est le footer qui s'occupe
+de cette tache */ 
+
+.footer {
+    clear: both;
+}
+
+
